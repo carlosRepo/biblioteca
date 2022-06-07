@@ -1,0 +1,34 @@
+    <table border="1">
+    <thead>
+        <tr>
+            <th>título</th>
+            <th>editorial</th>
+            <th>autor</th>
+            <th>estadoLibro</th>
+            <th>clasificacion</th>
+            <th>cantidadTotal</th>
+            <th>cantidadDisponible</th>
+            <th>cantidad reseñas</th>
+            <th>controles</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each libros}}
+        <tr>
+            <td>{{tituloLibro}}</td>
+            <td>{{editorialLibro}}</td>
+            <td>{{autorLibro}}</td>
+            <td>{{estadoLibro}}</td>
+            <td>{{clasificacionLibro}}</td>
+            <td>{{cantidadTotalLibro}}</td>
+            <td>{{cantidadDisponibleLibro}}</td>
+            <td>{{tituloLibro}}</td>
+            <td>
+                <a href="/edit/{{_id}}">editar</a>
+                <a href="/delete/{{_id}}">eliminar</a>
+            </td>    
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>

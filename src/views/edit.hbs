@@ -1,0 +1,36 @@
+<h1>edit</h1>
+
+<form action="/edit/{{_id}}" method="POST">
+
+    <div>
+        <label for="">Ingrese un titulo</label>
+        <input type="text" placeholder="titulo" name="tituloLibro" value="{{tituloLibro}}">
+    </div>
+    <div>
+        <label for="">Ingrese una o unas editoriales separadas por una coma</label>
+        <input type="text" placeholder="editoriales" name="editorialLibro" value="{{editorialLibro}}">
+    </div>
+        <div>
+        <label for="">Ingrese una o unas editoriales separadas por una coma</label>
+        <input type="text" placeholder="editoriales" name="autorLibro" value="{{autorLibro}}">
+    </div>
+    <div>
+        <label for="">Ingrese un estadoLibro</label>
+        <input type="text" placeholder="estadoLibro" name="estadoLibro" value="{{estadoLibro}}">
+    </div>
+    <div>
+        <label for="">Ingrese un clasificacion</label>
+        <input type="text" placeholder="clasificacion" name="clasificacionLibro" value="{{clasificacionLibro}}">
+    </div>
+    <div>
+        <label for="">Ingrese un cantidadTotal</label>
+        <input type="text" placeholder="cantidadTotal" name="cantidadTotalLibro" value="{{cantidadTotalLibro}}">
+    </div>
+    <div>
+        <label for="">Ingrese un cantidadDisponible</label>
+        <input type="text" placeholder="cantidadDisponible" name="cantidadDisponibleLibro" value="{{cantidadDisponibleLibro}}">
+    </div>
+
+
+<button>editar</button>
+</form>
