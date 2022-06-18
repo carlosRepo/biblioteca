@@ -10,7 +10,7 @@ const usuarioSchema = new Schema({
         required: true
     },
     fechaNacimientoUsuario: {
-        type: Date,
+        type: String,
         required: true
     },
     direccionUsuario: {
@@ -27,7 +27,7 @@ const usuarioSchema = new Schema({
     },
     estadoCuentaUsuario: {
         type: Boolean,
-        required: true
+        default: true
     },
     cantidadMaximaAPedirUsuario: {
         type: Number,

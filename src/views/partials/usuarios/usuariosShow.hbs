@@ -1,0 +1,34 @@
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>rutUsuario</th>
+            <th>nombreCompletoUsuario</th>
+            <th>fechaNacimientoUsuario</th>
+            <th>direccionUsuario</th>
+            <th>correoUsuario</th>
+            <th>estadoCuentaUsuario</th>
+            <th>cantidadMaximaAPedirUsuario</th>
+            <th>idPerfil</th>
+            <th>controles</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each usuarios}}
+        <tr>
+            <td>{{rutUsuario}}</td>
+            <td>{{nombreCompletoUsuario}}</td>
+            <td>{{fechaNacimientoUsuario}}</td>
+            <td>{{direccionUsuario}}</td>
+            <td>{{correoUsuario}}</td>
+            <td>{{estadoCuentaUsuario}}</td>
+            <td>{{cantidadMaximaAPedirUsuario}}</td>
+            <td>{{idPerfil}}</td>
+            <td>
+                <a href="/deleteUsuario/{{_id}}">bloq/desbloq</a>
+                <a href="/editUsuario/{{_id}}">editar</a>
+            </td>    
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>

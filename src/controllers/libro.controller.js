@@ -1,14 +1,15 @@
 import Libro from '../models/Libro'
+import Usuario from '../models/Usuario'
 
 export const renderFindLibro = async(req, res) => {
-    const libros = await Libro.find().lean()
-    res.render('index', { libros: libros })
+    const [libros, usuarios] = await Promise.all([Libro.find().lean(), Usuario.find().lean()])
+    res.render('index', { libros: libros, usuarios: usuarios })
 }
 
 export const renderEditLibro = async(req, res) => {
     try {
         const libro = await Libro.findById(req.params.id).lean()
-        res.render('edit', libro);
+        res.render('editLibro', libro);
     } catch (error) {
         console.log(error.message)
     }

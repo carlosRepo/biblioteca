@@ -1,4 +1,4 @@
-    <table border="1">
+    <table class="table table-bordered">
     <thead>
         <tr>
             <th>título</th>
@@ -8,7 +8,6 @@
             <th>clasificacion</th>
             <th>cantidadTotal</th>
             <th>cantidadDisponible</th>
-            <th>cantidad reseñas</th>
             <th>controles</th>
         </tr>
     </thead>
@@ -22,10 +21,9 @@
             <td>{{clasificacionLibro}}</td>
             <td>{{cantidadTotalLibro}}</td>
             <td>{{cantidadDisponibleLibro}}</td>
-            <td>{{tituloLibro}}</td>
             <td>
-                <a href="/edit/{{_id}}">editar</a>
-                <a href="/delete/{{_id}}">eliminar</a>
+                <a href="/editLibro/{{_id}}">editar</a>
+                <a href="/deleteLibro/{{_id}}">eliminar</a>
             </td>    
         </tr>
         {{/each}}

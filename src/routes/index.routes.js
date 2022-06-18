@@ -1,6 +1,7 @@
 import { Router } from "express";
 import Libro from '../models/Libro'
 import { addLibro, deleteLibro, editLibro, renderEditLibro, renderFindLibro } from "../controllers/libro.controller";
+import { addUsuario, renderEditUsuario } from "../controllers/usuario.controller";
 const router = Router()
 
 //rutas de paginas
@@ -9,19 +10,26 @@ const router = Router()
 router.get('/about', (req, res) => {
     res.render('about');
 })
+router.get('/createUsuario', (req, res) => {
+    res.render('createUsuario');
+})
+router.get('/editLibro/:id', renderEditLibro)
+router.get('/editUsuario/:id', renderEditUsuario)
 
-router.get('/edit/:id', renderEditLibro)
+router.get('/createLibro', (req, res) => {
+    res.render('createLibro');
+})
 
-router.get('/create', (req, res) => {
-        res.render('create');
-    })
-    //rutas de crud
+
+//rutas de crud libro
 router.get('/', renderFindLibro);
 
 router.post('/libro/add', addLibro);
 
-router.post('/edit/:id', editLibro);
+router.post('/usuario/add', addUsuario);
 
-router.get('/delete/:id', deleteLibro);
+router.post('/editLibro/:id', editLibro);
+
+router.get('/deleteLibro/:id', deleteLibro);
 
 export default router;
