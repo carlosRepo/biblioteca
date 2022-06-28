@@ -9,6 +9,7 @@
             <th>cantidadTotal</th>
             <th>cantidadDisponible</th>
             <th>controles</th>
+            <th>reseñas</th>
         </tr>
     </thead>
     <tbody>
@@ -21,12 +22,23 @@
             <td>{{clasificacionLibro}}</td>
             <td>{{cantidadTotalLibro}}</td>
             <td>{{cantidadDisponibleLibro}}</td>
-            <td>
+                        <td>
                 <a href="/editLibro/{{_id}}">editar</a>
                 <a href="/deleteLibro/{{_id}}">eliminar</a>
             </td>    
+            {{#each resenaLibro}}
+                <td>{{idUsuario}}</td>
+                <td>{{nombreUsuario}}</td>
+                <td>{{resenaPorUsuario}}</td>
+                <td>{{puntuacion}}</td>
+            {{/each}}
+
         </tr>
         {{/each}}
     </tbody>
 
 </table>
+
+
+
+

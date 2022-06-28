@@ -30,9 +30,8 @@ export const addUsuario = async(req, res) => {
 }
 
 export const deleteUsuario = async(req, res) => {
-    const { id } = req.params;
-    const usuario = await usuario.findById(id);
+    const usuario = await Usuario.findById(req.params.id).lean()
     usuario.estadoCuentaUsuario = !usuario.estadoCuentaUsuario;
-    await usuario.save();
+    await Usuario.findByIdAndUpdate(req.params.id, usuario)
     res.redirect('/');
 }

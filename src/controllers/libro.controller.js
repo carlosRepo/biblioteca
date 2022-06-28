@@ -6,6 +6,11 @@ export const renderFindLibro = async(req, res) => {
     res.render('index', { libros: libros, usuarios: usuarios })
 }
 
+export const renderFindLibroUsuario = async(req, res) => {
+    const [libros, usuarios] = await Promise.all([Libro.find().lean(), Usuario.find().lean()])
+    res.render('createSolicitudUsuario', { libros: libros, usuarios: usuarios })
+}
+
 export const renderEditLibro = async(req, res) => {
     try {
         const libro = await Libro.findById(req.params.id).lean()

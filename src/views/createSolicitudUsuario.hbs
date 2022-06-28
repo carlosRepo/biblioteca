@@ -1,0 +1,108 @@
+<h1>seleccione al usuario y los libros</h1>
+
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>rutUsuario</th>
+            <th>nombreCompletoUsuario</th>
+            <th>fechaNacimientoUsuario</th>
+            <th>direccionUsuario</th>
+            <th>correoUsuario</th>
+            <th>estadoCuentaUsuario</th>
+            <th>cantidadMaximaAPedirUsuario</th>
+            <th>idPerfil</th>
+            <th>seleccionar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each usuarios}}
+        <tr name="{{_id}}">
+            
+            <td>{{rutUsuario}}</td>
+            <td>{{nombreCompletoUsuario}}</td>
+            <td>{{fechaNacimientoUsuario}}</td>
+            <td>{{direccionUsuario}}</td>
+            <td>{{correoUsuario}}</td>
+            <td>{{estadoCuentaUsuario}}</td>
+            <td>{{cantidadMaximaAPedirUsuario}}</td>
+            <td>{{idPerfil}}</td>
+            <td><input type="radio" name="usuarioSelected" value="{{rutUsuario}}" onclick="selectUsuario('{{_id}}')"></td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>cantidad</th>
+            <th>título</th>
+            <th>editorial</th>
+            <th>autor</th>
+            <th>estadoLibro</th>
+            <th>clasificacion</th>
+            <th>cantidadTotal</th>
+            <th>cantidadDisponible</th>
+            <th>seleccionar</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        {{#each libros}}
+        <tr id="{{_id}}">
+            <td><input type="number" name="cantidad{{id_}}" min="0" max="{{cantidadDisponibleLibro}}" value="0"></td>
+            <td><input type="hidden" value="{{_id}}"><input type="text" value="{{tituloLibro}}"> </td>
+            <td>{{editorialLibro}}</td>
+            <td>{{autorLibro}}</td>
+            <td>{{estadoLibro}}</td>
+            <td>{{clasificacionLibro}}</td>
+            <td>{{cantidadTotalLibro}}</td>
+            <td>{{cantidadDisponibleLibro}}</td>
+            <td><input type="radio" name="libroSelected" value="{{_id}}" onclick="selectLibro('{{_id}}')"></td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+<form action="/solicitudUsuario/add" method="POST">
+estado del libro actual<input type="text" id="estadoLibro">
+<input type="hidden" id="idUsuario" name="idUsuario" value="">
+<input type="hidden" id="datosEntregaLibro.idLibro" value="">
+<input type="hidden" id="datosEntregaLibro.titulo" value="">
+<input type="hidden" id="datosEntregaLibro.fechaSolicitud" value="">
+<input type="hidden" id="datosEntregaLibro.fechaEntrega" value="">
+<input type="hidden" id="datosEntregaLibro.fechaEntregaMaxima" value="">
+<input type="hidden" id="datosEntregaLibro.cantidadLibro" value="">
+<input type="hidden" id="datosEntregaLibro.estadoAntesEntrega" value="">
+<input type="hidden" id="datosEntregaLibro.estadoDespuesEntrega" value="">
+
+<button>agregar</button>
+</form>
+<script>
+    //DOM
+    var idUsuario=document.getElementById("idUsuario");
+    var idLibro=document.getElementById("datosEntregaLibro.idLibro");
+    var titulo=document.getElementById("datosEntregaLibro.titulo");
+    var fechaSolicitud=document.getElementById("datosEntregaLibro.fechaSolicitud");
+    var fechaEntrega=document.getElementById("datosEntregaLibro.fechaEntrega");
+    var fechaEntregaMaxima=document.getElementById("datosEntregaLibro.fechaEntregaMaxima");
+    var cantidadLibro=document.getElementById("datosEntregaLibro.cantidadLibro");
+    
+    var estadoDespuesEntrega=document.getElementById("datosEntregaLibro.estadoDespuesEntrega");
+
+function selectUsuario(rut){
+    idUsuario.value=rut;
+    console.log(idUsuario.value)
+}
+function selectLibro(idRow){
+    
+    var row=document.getElementById(idRow);
+    cantidadLibro.value=row.cells[0].children[0].value;
+    idLibro.value=row.cells[1].children[0].value;
+    titulo.value=row.cells[1].children[1].value;
+    fechaSolicitud.value=new Date(Date.now());
+    fechaEntregaMaxima.value=new Date(Date.now() + 12096e5);
+    var estadoAntesEntrega=document.getElementById("estadoLibro");
+    console.log("cant:"+cantidadLibro.value+",idlibro:"+idLibro.value+",titulo:"+titulo.value+",fechaSolicitud:"+fechaSolicitud.value+",fechaEntregaMaxima:"+fechaEntregaMaxima.value)
+}
+</script>
