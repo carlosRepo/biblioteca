@@ -65,30 +65,29 @@
 
 </table>
 <form action="/solicitudUsuario/add" method="POST">
-estado del libro actual<input type="text" id="estadoLibro">
+estado del libro actual<input type="text" id="estadoAntesEntrega" name="estadoAntesEntrega">
 <input type="hidden" id="idUsuario" name="idUsuario" value="">
-<input type="hidden" id="datosEntregaLibro.idLibro" value="">
-<input type="hidden" id="datosEntregaLibro.titulo" value="">
-<input type="hidden" id="datosEntregaLibro.fechaSolicitud" value="">
-<input type="hidden" id="datosEntregaLibro.fechaEntrega" value="">
-<input type="hidden" id="datosEntregaLibro.fechaEntregaMaxima" value="">
-<input type="hidden" id="datosEntregaLibro.cantidadLibro" value="">
-<input type="hidden" id="datosEntregaLibro.estadoAntesEntrega" value="">
-<input type="hidden" id="datosEntregaLibro.estadoDespuesEntrega" value="">
+<input type="hidden" id="idLibro" name="idLibro"value="">
+<input type="hidden" id="titulo" name="titulo"value="">
+<input type="hidden" id="fechaSolicitud" name="fechaSolicitud"value="">
+<input type="hidden" id="fechaEntrega" name="fechaEntrega"value="">
+<input type="hidden" id="fechaEntregaMaxima" name="fechaEntregaMaxima"value="">
+<input type="hidden" id="cantidadLibro" name="cantidadLibro"value="">
+<input type="hidden" id="estadoDespuesEntrega" name="estadoDespuesEntrega"value="">
 
 <button>agregar</button>
 </form>
 <script>
     //DOM
     var idUsuario=document.getElementById("idUsuario");
-    var idLibro=document.getElementById("datosEntregaLibro.idLibro");
-    var titulo=document.getElementById("datosEntregaLibro.titulo");
-    var fechaSolicitud=document.getElementById("datosEntregaLibro.fechaSolicitud");
-    var fechaEntrega=document.getElementById("datosEntregaLibro.fechaEntrega");
-    var fechaEntregaMaxima=document.getElementById("datosEntregaLibro.fechaEntregaMaxima");
-    var cantidadLibro=document.getElementById("datosEntregaLibro.cantidadLibro");
+    var idLibro=document.getElementById("idLibro");
+    var titulo=document.getElementById("titulo");
+    var fechaSolicitud=document.getElementById("fechaSolicitud");
+    var fechaEntrega=document.getElementById("fechaEntrega");
+    var fechaEntregaMaxima=document.getElementById("fechaEntregaMaxima");
+    var cantidadLibro=document.getElementById("cantidadLibro");
     
-    var estadoDespuesEntrega=document.getElementById("datosEntregaLibro.estadoDespuesEntrega");
+    var estadoDespuesEntrega=document.getElementById("estadoDespuesEntrega");
 
 function selectUsuario(rut){
     idUsuario.value=rut;

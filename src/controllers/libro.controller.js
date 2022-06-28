@@ -1,9 +1,10 @@
 import Libro from '../models/Libro'
 import Usuario from '../models/Usuario'
+import SolicitudUsuario from '../models/SolicitudUsuario'
 
 export const renderFindLibro = async(req, res) => {
-    const [libros, usuarios] = await Promise.all([Libro.find().lean(), Usuario.find().lean()])
-    res.render('index', { libros: libros, usuarios: usuarios })
+    const [libros, usuarios, solicitudUsuarios] = await Promise.all([Libro.find().lean(), Usuario.find().lean(), SolicitudUsuario.find().lean()])
+    res.render('index', { libros: libros, usuarios: usuarios, solicitudUsuarios: solicitudUsuarios })
 }
 
 export const renderFindLibroUsuario = async(req, res) => {

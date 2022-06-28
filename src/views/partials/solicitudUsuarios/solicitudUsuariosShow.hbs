@@ -1,0 +1,38 @@
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>idUsuario</th>
+            <th>idLibro</th>
+            <th>titulo</th>
+            <th>fechaSolicitud</th>
+            <th>fechaEntrega</th>
+            <th>fechaEntregaMaxima</th>
+            <th>cantidadLibro</th>
+            <th>estadoAntesEntrega</th>
+            <th>estadoDespuesEntrega</th>
+            <th>controles</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each solicitudUsuarios}}
+        <tr>
+            <td>{{idUsuario}}</td>
+            {{#each datosEntregaLibro}}
+            <td>{{idLibro}}</td>
+            <td>{{titulo}}</td>
+            <td>{{fechaSolicitud}}</td>
+            <td>{{fechaEntrega}}</td>
+            <td>{{fechaEntregaMaxima}}</td>
+            <td>{{cantidadLibro}}</td>
+            <td>{{estadoAntesEntrega}}</td>
+            <td>{{estadoDespuesEntrega}}</td>
+            <td>
+                <a href="/deleteUsuario/{{_id}}">bloq/desbloq</a>
+                <a href="/editUsuario/{{_id}}">editar</a>
+            </td>    
+            {{/each}}
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
