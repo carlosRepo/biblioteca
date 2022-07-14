@@ -2,7 +2,7 @@ import { Router } from "express";
 import Libro from '../models/Libro'
 import { addLibro, deleteLibro, editLibro, renderEditLibro, renderFindLibro, renderFindLibroUsuario } from "../controllers/libro.controller";
 import { addUsuario, deleteUsuario, editUsuario, renderEditUsuario } from "../controllers/usuario.controller";
-import { addSolicitudUsuario, stopSolicitudUsuario, editSolicitudUsuario, renderEditSolicitudUsuario } from "../controllers/solicitudUsuario.controller";
+import { addSolicitudUsuario, entregarLibroMalEstado, entregarLibroBuenEstado, editSolicitudUsuario, renderEditSolicitudUsuario } from "../controllers/solicitudUsuario.controller";
 const router = Router()
 
 //rutas de paginas
@@ -36,6 +36,6 @@ router.post('/editUsuario/:id', editUsuario);
 
 router.get('/deleteLibro/:id', deleteLibro);
 router.get('/deleteUsuario/:id', deleteUsuario);
-router.get('/entregarLibro/:id', stopSolicitudUsuario);
-
+router.get('/entregarLibro/:id', entregarLibroBuenEstado);
+router.get('/entregarLibroMal/:id', entregarLibroMalEstado);
 export default router;

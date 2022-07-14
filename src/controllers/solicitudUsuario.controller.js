@@ -40,9 +40,20 @@ export const addSolicitudUsuario = async(req, res) => {
     res.redirect('/');
 }
 
-export const stopSolicitudUsuario = async(req, res) => {
+export const entregarLibroBuenEstado = async(req, res) => {
     var filter = { "datosEntregaLibro.fechaSolicitud": req.params.id }
     var update = { "datosEntregaLibro.$.fechaEntrega": new Date() }
+    var update2 = { "datosEntregaLibro.$.estadoDespuesEntrega": "Bueno" }
     await SolicitudUsuario.findOneAndUpdate(filter, update)
+    await SolicitudUsuario.findOneAndUpdate(filter, update2)
+    res.redirect('/');
+}
+
+export const entregarLibroMalEstado = async(req, res) => {
+    var filter = { "datosEntregaLibro.fechaSolicitud": req.params.id }
+    var update = { "datosEntregaLibro.$.fechaEntrega": new Date() }
+    var update2 = { "datosEntregaLibro.$.estadoDespuesEntrega": "Mal" }
+    await SolicitudUsuario.findOneAndUpdate(filter, update)
+    await SolicitudUsuario.findOneAndUpdate(filter, update2)
     res.redirect('/');
 }
