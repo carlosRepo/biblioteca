@@ -36,5 +36,6 @@ router.post('/editUsuario/:id', editUsuario);
 
 router.get('/deleteLibro/:id', deleteLibro);
 router.get('/deleteUsuario/:id', deleteUsuario);
+router.get('/entregarLibro/:id', stopSolicitudUsuario);
 
 export default router;

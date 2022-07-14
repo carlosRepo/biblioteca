@@ -41,8 +41,8 @@ export const addSolicitudUsuario = async(req, res) => {
 }
 
 export const stopSolicitudUsuario = async(req, res) => {
-    const solicitudUsuario = await SolicitudUsuario.findById(req.params.id).lean()
-    solicitudUsuario.datosEntregaLibro.fechaEntregaMaxima = "hoy";
-    await SolicitudUsuario.findByIdAndUpdate(req.params.id, solicitudUsuario)
+    var filter = { "datosEntregaLibro.fechaSolicitud": req.params.id }
+    var update = { "datosEntregaLibro.$.fechaEntrega": new Date() }
+    await SolicitudUsuario.findOneAndUpdate(filter, update)
     res.redirect('/');
 }
