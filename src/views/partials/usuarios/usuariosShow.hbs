@@ -1,11 +1,12 @@
     <table class="table table-bordered">
     <thead>
-        <tr>
+        <tr><th>_id</th>
             <th>rutUsuario</th>
             <th>nombreCompletoUsuario</th>
             <th>fechaNacimientoUsuario</th>
             <th>direccionUsuario</th>
             <th>correoUsuario</th>
+            <th>contraseña</th>
             <th>estadoCuentaUsuario</th>
             <th>cantidadMaximaAPedirUsuario</th>
             <th>idPerfil</th>
@@ -15,11 +16,13 @@
     <tbody>
         {{#each usuarios}}
         <tr>
+            <td>{{_id}}</td>
             <td>{{rutUsuario}}</td>
             <td>{{nombreCompletoUsuario}}</td>
             <td>{{fechaNacimientoUsuario}}</td>
             <td>{{direccionUsuario}}</td>
             <td>{{correoUsuario}}</td>
+            <td>{{contraseñaUsuario}}</td>
             <td>{{estadoCuentaUsuario}}</td>
             <td>{{cantidadMaximaAPedirUsuario}}</td>
             <td>{{idPerfil}}</td>

@@ -1,0 +1,28 @@
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>dias extras</th>
+            <th>controles</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each perfiles}}
+        <tr>
+            <td>{{idPerfil}}</td>
+            <td>{{nombrePerfil}}</td>
+            <td>{{diasExtraPerfil}}</td>
+            <td>
+                <a href="/editPerfil/{{_id}}">editar</a>
+                <a href="/deletePerfil/{{_id}}">eliminar</a>
+            </td>    
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+
+
+
+

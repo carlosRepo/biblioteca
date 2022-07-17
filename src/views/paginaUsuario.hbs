@@ -1,0 +1,80 @@
+<h1>datos libros pedidos</h1>
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>idLibro</th>
+            <th>titulo</th>
+            <th>fechaSolicitud</th>
+            <th>fechaEntrega</th>
+            <th>fechaEntregaMaxima</th>
+            <th>cantidadLibro</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each solicitudUsuarios}}
+        <tr>
+            {{#each datosEntregaLibro}}
+            <td>{{idLibro}}</td>
+            <td>{{titulo}}</td>
+            <td>{{fechaSolicitud}}</td>
+            <td>{{fechaEntrega}}</td>
+            <td>{{fechaEntregaMaxima}}</td>
+            <td>{{cantidadLibro}}</td>
+            {{/each}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>título</th>
+            <th>editorial</th>
+            <th>autor</th>
+            <th>estadoLibro</th>
+            <th>clasificacion</th>
+            <th>cantidadDisponible</th>
+            <th>reseñas</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th><th></th>
+            <th>usuario</th><th>descripcion</th><th>puntaje</th>
+        </tr>
+    </thead>
+    <h1>historial libros</h1>
+    <tbody>
+        {{#each libros}}
+        <tr>
+            <td>{{_id}}</td>
+            <td>{{tituloLibro}}</td>
+            <td>{{editorialLibro}}</td>
+            <td>{{autorLibro}}</td>
+            <td>{{estadoLibro}}</td>
+            <td>{{clasificacionLibro}}</td>
+            <td>{{cantidadDisponibleLibro}}</td>
+            {{#each resenaLibro}}
+                    <td>{{nombreUsuario}}</td>
+                    <td>{{resenaPorUsuario}}</td> 
+                    <td>{{puntuacion}}</td>
+            {{/each}}
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+<h1>reseñar</h1>
+<form action="/resenia/add" method="post">
+    <input type="text" placeholder="ingrese el id del libro" name="_id" id="_id" value="">
+    <input type="hidden" name="idUsuario" id="idUsuario" value="{{#each usuarios}}{{_id}}{{/each}}">
+    <input type="hidden" name="nombreCompletoUsuario" id="nombreCompletoUsuario" value="{{#each usuarios}}{{nombreCompletoUsuario}}{{/each}}">
+    <input type="text" placeholder="ingrese una reseña" name="resenaPorUsuario" id="resenaPorUsuario">
+    <input type="text" placeholder="ingrese puntaje" name="puntuacion" id="puntuacion">
+    <button type="submit">Reseñar</button>
+</form>
