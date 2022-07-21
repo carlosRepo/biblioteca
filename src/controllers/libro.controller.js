@@ -43,48 +43,42 @@ export const deleteLibro = async(req, res) => {
 
 export const addResenia = async(req, res) => {
     try {
+        var resena = {
+            idUsuario: req.body.idUsuario,
+            nombreUsuario: req.body.nombreCompletoUsuario,
+            resenaPorUsuario: req.body.resenaPorUsuario,
+            puntuacion: req.body.puntuacion
+        }
+        var encontrado = false;
         const libro = await Libro.findById(req.body._id).lean()
         libro.resenaLibro.forEach(element => {
             if (element.idUsuario == req.body.idUsuario) {
-
-                Libro.updateOne({ _id: req.body._id, "resenaLibro.idUsuario": req.body.idUsuario }, { $set: { resenaLibro: { idUsuario: req.body.idUsuario, nombreUsuario: req.body.nombreCompletoUsuario, resenaPorUsuario: req.body.resenaPorUsuario, puntuacion: req.body.puntuacion } } })
-            } else {
-                console.log("idLibro" + req.body._id)
-                console.log("idUsuario" + req.body.idUsuario)
-                var resena = {
-                    idUsuario: req.body.idUsuario,
-                    nombreUsuario: req.body.nombreCompletoUsuario,
-                    resenaPorUsuario: req.body.resenaPorUsuario,
-                    puntuacion: req.body.puntuacion
-                }
-                console.log(resena)
-                Libro.updateOne({ _id: req.body._id }, {
-                        $push: { resenaLibro: resena }
-                    },
+                console.log("encontrado")
+                Libro.updateOne({ _id: req.body._id, resenaLibro: { $elemMatch: { "resenaLibro.idUsuario": req.body.idUsuario } } }, { $set: { "resenaLibro.$": { idUsuario: resena.idUsuario, nombreUsuario: resena.nombreUsuario, resenaPorUsuario: resena.resenaPorUsuario, puntuacion: resena.puntuacion, } } },
                     function(error, success) {
                         if (error) {
                             console.log(error)
                         } else {
                             console.log(success)
                         }
-                    }
-
-
-
-
-
-
-
-                )
-
-
-
-
-
-
+                    })
+                encontrado = true;
+                res.redirect('/');
             }
-        });
-
+        })
+        if (encontrado == false) {
+            Libro.updateOne({ _id: req.body._id }, {
+                    $push: { resenaLibro: resena }
+                },
+                function(error, success) {
+                    if (error) {
+                        console.log(error)
+                    } else {
+                        console.log(success)
+                    }
+                })
+        }
+        res.redirect('/');
     } catch (error) {
         console.log(error.message)
     }
