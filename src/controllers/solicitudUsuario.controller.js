@@ -14,6 +14,7 @@ export const renderEditSolicitudUsuario = async(req, res) => {
 
 export const editSolicitudUsuario = async(req, res) => {
     const { id } = req.params
+    console.table(req.params)
     await SolicitudUsuario.findByIdAndUpdate(id, req.body)
     res.redirect('/');
 }

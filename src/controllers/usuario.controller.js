@@ -36,12 +36,16 @@ export const renderEditUsuario = async(req, res) => {
 
 export const editUsuario = async(req, res) => {
     const { id } = req.params
+    req.body.idPerfil = req.body.idPerfil.split(",")
     await Usuario.findByIdAndUpdate(id, req.body)
     res.redirect('/');
 }
 
 export const addUsuario = async(req, res) => {
     try {
+        req.body.idPerfil = req.body.idPerfil.split(",")
+            //var fecha = req.body.fechaNacimientoUsuario
+            //req.body.fechaNacimientoUsuario = fecha.toISOString()
         const usuario = Usuario(req.body)
         await usuario.save()
     } catch (error) {

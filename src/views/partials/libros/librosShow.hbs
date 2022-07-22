@@ -11,6 +11,15 @@
             <th>controles</th>
             <th>reseñas</th>
         </tr>
+                <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th><th></th>
+            <th></th><th></th>
+            <th>usuario</th><th>descripcion</th><th>puntaje</th>
+        </tr>
     </thead>
     <tbody>
         {{#each libros}}
@@ -27,7 +36,6 @@
                 <a href="/deleteLibro/{{_id}}">eliminar</a>
             </td>    
             {{#each resenaLibro}}
-                <td>{{idUsuario}}</td>
                 <td>{{nombreUsuario}}</td>
                 <td>{{resenaPorUsuario}}</td>
                 <td>{{puntuacion}}</td>

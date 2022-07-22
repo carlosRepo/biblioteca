@@ -54,7 +54,7 @@ export const addResenia = async(req, res) => {
         libro.resenaLibro.forEach(element => {
             if (element.idUsuario == req.body.idUsuario) {
                 console.log("encontrado")
-                Libro.updateOne({ _id: req.body._id, resenaLibro: { $elemMatch: { "resenaLibro.idUsuario": req.body.idUsuario } } }, { $set: { "resenaLibro.$": { idUsuario: resena.idUsuario, nombreUsuario: resena.nombreUsuario, resenaPorUsuario: resena.resenaPorUsuario, puntuacion: resena.puntuacion, } } },
+                Libro.findOneAndUpdate({ _id: req.body._id, resenaLibro: { $elemMatch: { "resenaLibro.idUsuario": req.body.idUsuario } } }, { $set: { "resenaLibro.$": { idUsuario: resena.idUsuario, nombreUsuario: resena.nombreUsuario, resenaPorUsuario: resena.resenaPorUsuario, puntuacion: resena.puntuacion, } } },
                     function(error, success) {
                         if (error) {
                             console.log(error)

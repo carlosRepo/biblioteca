@@ -99,8 +99,10 @@ function selectLibro(idRow){
     cantidadLibro.value=row.cells[0].children[0].value;
     idLibro.value=row.cells[1].children[0].value;
     titulo.value=row.cells[1].children[1].value;
-    fechaSolicitud.value=new Date(Date.now());
-    fechaEntregaMaxima.value=new Date(Date.now() + 12096e5);
+    fechaSolicitud.value=new Date().toISOString()
+    let dates= new Date()
+    dates.setDate(dates.getDate() + 7);
+    fechaEntregaMaxima.value=dates.toISOString()
     var estadoAntesEntrega=document.getElementById("estadoLibro");
 }
 </script>

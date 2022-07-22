@@ -10,7 +10,7 @@ const perfilSchema = new Schema({
         required: true
     },
     diasExtraPerfil: {
-        type: String,
+        type: Number,
         required: true
     }
 }, {
