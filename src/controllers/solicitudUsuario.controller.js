@@ -43,7 +43,7 @@ export const addSolicitudUsuario = async(req, res) => {
 
 export const entregarLibroBuenEstado = async(req, res) => {
     var filter = { "datosEntregaLibro.fechaSolicitud": req.params.id }
-    var update = { "datosEntregaLibro.$.fechaEntrega": new Date() }
+    var update = { "datosEntregaLibro.$.fechaEntrega": new Date().toISOString() }
     var update2 = { "datosEntregaLibro.$.estadoDespuesEntrega": "Bueno" }
     await SolicitudUsuario.findOneAndUpdate(filter, update)
     await SolicitudUsuario.findOneAndUpdate(filter, update2)
@@ -52,7 +52,7 @@ export const entregarLibroBuenEstado = async(req, res) => {
 
 export const entregarLibroMalEstado = async(req, res) => {
     var filter = { "datosEntregaLibro.fechaSolicitud": req.params.id }
-    var update = { "datosEntregaLibro.$.fechaEntrega": new Date() }
+    var update = { "datosEntregaLibro.$.fechaEntrega": new Date().toISOString() }
     var update2 = { "datosEntregaLibro.$.estadoDespuesEntrega": "Mal" }
     await SolicitudUsuario.findOneAndUpdate(filter, update)
     await SolicitudUsuario.findOneAndUpdate(filter, update2)

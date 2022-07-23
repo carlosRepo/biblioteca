@@ -18,7 +18,7 @@ const libroSchema = new Schema({
         required: true
     },
     clasificacionLibro: {
-        type: String,
+        type: [String],
         required: true
     },
     cantidadTotalLibro: {
