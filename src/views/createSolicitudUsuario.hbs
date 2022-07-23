@@ -75,7 +75,7 @@ estado del libro actual<input type="text" id="estadoAntesEntrega" name="estadoAn
 <input type="hidden" id="cantidadLibro" name="cantidadLibro"value="">
 <input type="hidden" id="estadoDespuesEntrega" name="estadoDespuesEntrega"value="">
 
-<button>agregar</button>
+<button onclick="searchData()">agregar</button>
 </form>
 <script>
     //DOM
@@ -86,8 +86,18 @@ estado del libro actual<input type="text" id="estadoAntesEntrega" name="estadoAn
     var fechaEntrega=document.getElementById("fechaEntrega");
     var fechaEntregaMaxima=document.getElementById("fechaEntregaMaxima");
     var cantidadLibro=document.getElementById("cantidadLibro");
-    
     var estadoDespuesEntrega=document.getElementById("estadoDespuesEntrega");
+    var radioButtons=document.getElementsByName("libroSelected");
+
+function searchData(){
+    let data= radioButtons.forEach( function(valor, indice, array) {
+        if(valor.checked==true){
+        console.log(valor.value)
+        selectLibro(valor.value)
+    }
+});
+}
+
 
 function selectUsuario(rut){
     idUsuario.value=rut;
@@ -96,6 +106,7 @@ function selectUsuario(rut){
 function selectLibro(idRow){
     
     var row=document.getElementById(idRow);
+    console.log(idRow)
     cantidadLibro.value=row.cells[0].children[0].value;
     idLibro.value=row.cells[1].children[0].value;
     titulo.value=row.cells[1].children[1].value;
