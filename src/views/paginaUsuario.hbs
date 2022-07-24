@@ -1,5 +1,7 @@
 <h1>datos libros pedidos</h1>
-    <table class="table table-bordered">
+   
+<div class="container-fluid">
+    <table class="table table-bordered table-light" style="margin-top: 20px ;">
     <thead>
         <tr>
             <th>idLibro</th>
@@ -26,7 +28,7 @@
     </tbody>
 </table>
 
-    <table class="table table-bordered">
+    <table class="table table-bordered table-light">
     <thead>
         <tr>
             <th>id</th>
@@ -37,6 +39,8 @@
             <th>clasificacion</th>
             <th>cantidadDisponible</th>
             <th>reseñas</th>
+            <th></th>
+            <th></th>
         </tr>
         <tr>
             <th></th>
@@ -70,11 +74,18 @@
 
 </table>
 <h1>reseñar / editar reseña</h1>
-<form action="/resenia/add" method="post">
-    <input type="text" placeholder="ingrese el id del libro" name="_id" id="_id" value="">
-    <input type="hidden" name="idUsuario" id="idUsuario" value="{{#each usuarios}}{{_id}}{{/each}}">
-    <input type="hidden" name="nombreCompletoUsuario" id="nombreCompletoUsuario" value="{{#each usuarios}}{{nombreCompletoUsuario}}{{/each}}">
-    <input type="text" placeholder="ingrese una reseña" name="resenaPorUsuario" id="resenaPorUsuario">
-    <input type="text" placeholder="ingrese puntaje" name="puntuacion" id="puntuacion">
-    <button type="submit">Reseñar</button>
-</form>
+<div class="card" style="width: 36rem;">
+    <div class="card-body">
+        <form action="/resenia/add" method="post">
+            <input class="form-control" type="text" placeholder="ingrese el id del libro" name="_id" id="_id" value="">
+            <input type="hidden" name="idUsuario" id="idUsuario" value="{{#each usuarios}}{{_id}}{{/each}}">
+            <input type="hidden" name="nombreCompletoUsuario" id="nombreCompletoUsuario" value="{{#each usuarios}}{{nombreCompletoUsuario}}{{/each}}">
+            <input class="form-control" type="text" placeholder="ingrese una reseña" name="resenaPorUsuario" id="resenaPorUsuario">
+            <input class="form-control" type="text" placeholder="ingrese puntaje" name="puntuacion" id="puntuacion">
+            <button class="btn btn-warning" type="submit">Reseñar</button>
+        </form>
+    </div>
+</div>
+
+
+</div>
