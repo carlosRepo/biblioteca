@@ -1,12 +1,12 @@
 <h1>login usuario</h1>
 <form action="/loginUsuario/" method="POST">
-    <div>
+    <div class="form-group mb-2">
         <label for="">Ingrese correo</label>
-        <input type="text" placeholder="correoUsuario" name="correoUsuario" value="">
+        <input class="form-control" type="text" placeholder="correoUsuario" name="correoUsuario" value="" required>
     </div>
-    <div>
+    <div class="form-group mb-2">
         <label for="">Ingrese un contraseña</label>
-        <input type="text" placeholder="contraseñaUsuario" name="contraseñaUsuario" value="">
+        <input class="form-control" type="text" placeholder="contraseñaUsuario" name="contraseñaUsuario" value="" required>
     </div>
-    <button>ingresar</button>
+    <button class="btn btn-danger">ingresar</button>
 </form>

@@ -1,0 +1,7 @@
+input{
+    max-width: 500px;
+}
+
+thead, label, button, :placeholder-shown, a{
+    text-transform: capitalize;
+}

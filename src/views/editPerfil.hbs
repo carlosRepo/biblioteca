@@ -1,17 +1,17 @@
 <h1>edit</h1>
 <form action="/editPerfil/{{_id}}" method="POST">
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese el id</label>
-        <input type="texr" placeholder="idPerfil" name="idPerfil" value="{{idPerfil}}">
+        <input class="form-control" type="texr" placeholder="idPerfil" name="idPerfil" value="{{idPerfil}}" required>
     </div>
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese el nombre</label>
-        <input type="text" placeholder="nombrePerfil" name="nombrePerfil" value="{{nombrePerfil}}">
+        <input class="form-control" type="text" placeholder="nombrePerfil" name="nombrePerfil" value="{{nombrePerfil}}" required>
     </div>
-        <div>
+        <div class="form-group mb-3">
         <label for="">Ingrese la cantidad de dias extra</label>
-        <input type="number" placeholder="diasExtraPerfil" name="diasExtraPerfil" value="{{diasExtraPerfil}}">
+        <input class="form-control" type="number" placeholder="diasExtraPerfil" name="diasExtraPerfil" value="{{diasExtraPerfil}}" required>
     </div>
 
-<button>editar</button>
+<button class="btn btn-primary">editar</button>
 </form>

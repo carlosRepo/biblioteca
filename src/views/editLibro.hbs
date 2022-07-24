@@ -2,35 +2,35 @@
 
 <form action="/editLibro/{{_id}}" method="POST">
 
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese un titulo</label>
-        <input type="text" placeholder="titulo" name="tituloLibro" value="{{tituloLibro}}">
+        <input class="form-control" type="text" placeholder="titulo" name="tituloLibro" value="{{tituloLibro}}" required>
     </div>
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese una o unas editoriales separadas por una coma</label>
-        <input type="text" placeholder="editoriales" name="editorialLibro" value="{{editorialLibro}}">
+        <input class="form-control" type="text" placeholder="editoriales" name="editorialLibro" value="{{editorialLibro}}" required>
     </div>
-        <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese una o unas editoriales separadas por una coma</label>
-        <input type="text" placeholder="editoriales" name="autorLibro" value="{{autorLibro}}">
+        <input class="form-control" type="text" placeholder="editoriales" name="autorLibro" value="{{autorLibro}}" required>
     </div>
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese un estadoLibro</label>
-        <input type="text" placeholder="estadoLibro" name="estadoLibro" value="{{estadoLibro}}">
+        <input class="form-control" type="text" placeholder="estadoLibro" name="estadoLibro" value="{{estadoLibro}}" required>
     </div>
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese un clasificacion</label>
-        <input type="text" placeholder="clasificacion" name="clasificacionLibro" value="{{clasificacionLibro}}">
+        <input class="form-control" type="text" placeholder="clasificacion" name="clasificacionLibro" value="{{clasificacionLibro}}" required>
     </div>
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese un cantidadTotal</label>
-        <input type="text" placeholder="cantidadTotal" name="cantidadTotalLibro" value="{{cantidadTotalLibro}}">
+        <input class="form-control" type="text" placeholder="cantidadTotal" name="cantidadTotalLibro" value="{{cantidadTotalLibro}}" required>
     </div>
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese un cantidadDisponible</label>
-        <input type="text" placeholder="cantidadDisponible" name="cantidadDisponibleLibro" value="{{cantidadDisponibleLibro}}">
+        <input class="form-control" type="text" placeholder="cantidadDisponible" name="cantidadDisponibleLibro" value="{{cantidadDisponibleLibro}}" required>
     </div>
 
 
-<button>editar</button>
+<button class="btn btn-primary">editar</button>
 </form>

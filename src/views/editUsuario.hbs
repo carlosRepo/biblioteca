@@ -2,44 +2,44 @@
 
 <form action="/editUsuario/{{_id}}" method="POST">
 
-     <div>
+     <div class="form-group mb-3">
         <label for="">Ingrese rutUsuario</label>
-        <input type="text" placeholder="rutUsuario" name="rutUsuario" value="{{rutUsuario}}">
+        <input class="form-control" type="text" placeholder="rutUsuario" name="rutUsuario" value="{{rutUsuario}}" required>
     </div>
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese nombreCompletoUsuario</label>
-        <input type="text" placeholder="nombreCompletoUsuario" name="nombreCompletoUsuario" value="{{nombreCompletoUsuario}}">
+        <input class="form-control" type="text" placeholder="nombreCompletoUsuario" name="nombreCompletoUsuario" value="{{nombreCompletoUsuario}}" required>
     </div>
-        <div>
+        <div class="form-group mb-3">
         <label for="">Ingrese fechaNacimientoUsuario</label>
-        <input type="date" placeholder="fechaNacimientoUsuario" name="fechaNacimientoUsuario" value="{{fechaNacimientoUsuario}}">
+        <input class="form-control" type="date" placeholder="fechaNacimientoUsuario" name="fechaNacimientoUsuario" value="{{fechaNacimientoUsuario}}" required>
     </div>
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese un direccionUsuario</label>
-        <input type="text" placeholder="direccionUsuario" name="direccionUsuario" value="{{direccionUsuario}}">
+        <input class="form-control" type="text" placeholder="direccionUsuario" name="direccionUsuario" value="{{direccionUsuario}}" required>
     </div>
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese un correoUsuario</label>
-        <input type="text" placeholder="correoUsuario" name="correoUsuario" value="{{correoUsuario}}">
+        <input class="form-control" type="text" placeholder="correoUsuario" name="correoUsuario" value="{{correoUsuario}}" required>
     </div>
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese un contraseñaUsuario</label>
-        <input type="text" placeholder="contraseñaUsuario" name="contraseñaUsuario" value="{{contraseñaUsuario}}">
+        <input class="form-control" type="text" placeholder="contraseñaUsuario" name="contraseñaUsuario" value="{{contraseñaUsuario}}" required>
     </div>
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese un estadoCuentaUsuario</label>
-        <input type="text" placeholder="estadoCuentaUsuario" name="estadoCuentaUsuario" value="{{estadoCuentaUsuario}}">
+        <input class="form-control" type="text" placeholder="estadoCuentaUsuario" name="estadoCuentaUsuario" value="{{estadoCuentaUsuario}}" required>
     </div>
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese un cantidadMaximaAPedirUsuario</label>
-        <input type="text" placeholder="cantidadMaximaAPedirUsuario" name="cantidadMaximaAPedirUsuario" value="{{cantidadMaximaAPedirUsuario}}">
+        <input class="form-control" type="text" placeholder="cantidadMaximaAPedirUsuario" name="cantidadMaximaAPedirUsuario" value="{{cantidadMaximaAPedirUsuario}}" required>
     </div>
-    <div>
+    <div class="form-group mb-3">
         <label for="">Ingrese un idPerfil</label>
-        <input type="text" placeholder="idPerfil" name="idPerfil" value="{{idPerfil}}">
+        <input class="form-control" type="text" placeholder="idPerfil" name="idPerfil" value="{{idPerfil}}" required>
     </div>
 
 
 
-<button>editar</button>
+<button class="btn btn-primary">editar</button>
 </form>
