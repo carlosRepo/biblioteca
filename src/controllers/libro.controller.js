@@ -9,8 +9,8 @@ export const renderFindLibro = async(req, res) => {
 }
 
 export const renderFindLibroUsuario = async(req, res) => {
-    const [libros, usuarios] = await Promise.all([Libro.find().lean(), Usuario.find().lean()])
-    res.render('createSolicitudUsuario', { libros: libros, usuarios: usuarios })
+    const [libros, usuarios, perfils] = await Promise.all([Libro.find().lean(), Usuario.find().lean(), Perfil.find().lean()])
+    res.render('createSolicitudUsuario', { libros: libros, usuarios: usuarios, perfils: perfils })
 }
 
 export const renderEditLibro = async(req, res) => {

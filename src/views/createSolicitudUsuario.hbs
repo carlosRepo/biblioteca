@@ -16,7 +16,7 @@
     </thead>
     <tbody>
         {{#each usuarios}}
-        <tr name="{{_id}}">
+        <tr name="{{_id}}" id="{{_id}}">
             
             <td>{{rutUsuario}}</td>
             <td>{{nombreCompletoUsuario}}</td>
@@ -25,12 +25,24 @@
             <td>{{correoUsuario}}</td>
             <td>{{estadoCuentaUsuario}}</td>
             <td>{{cantidadMaximaAPedirUsuario}}</td>
-            <td>{{idPerfil}}</td>
+            <td><input type="text" value="{{idPerfil}}" disabled></td>
             {{#if estadoCuentaUsuario}}
             <td><input type="radio" name="usuarioSelected" value="{{rutUsuario}}" required="required"  onclick="selectUsuario('{{_id}}')"></td>
             {{/if}}
         </tr>
         {{/each}}
+
+        <script>
+            var perfilesId=[]
+            var perfilesDias=[]
+        </script>
+            {{#each perfils}}
+                <script>
+                    perfilesId.push({{idPerfil}})
+                    perfilesDias.push({{diasExtraPerfil}})
+                </script>
+            {{/each}}
+        
     </tbody>
 
 </table>
@@ -53,7 +65,7 @@
         {{#each libros}}
         <tr id="{{_id}}">
             <td><input type="number" name="cantidad{{id_}}" min="0" max="{{cantidadDisponibleLibro}}" value="0"></td>
-            <td><input type="hidden" value="{{_id}}"><input type="text" value="{{tituloLibro}}"> </td>
+            <td><input type="hidden" value="{{_id}}"><input type="text" value="{{tituloLibro}}" disabled="disabled"> </td>
             <td>{{editorialLibro}}</td>
             <td>{{autorLibro}}</td>
             <td>{{estadoLibro}}</td>
@@ -100,6 +112,7 @@ Estado del libro actual:
     var estadoDespuesEntrega=document.getElementById("estadoDespuesEntrega");
     var radioButtons=document.getElementsByName("libroSelected");
     var estadoAntesEntrega=document.getElementById("estadoAntesEntrega")
+    var diasExtra=0;
 
 function searchData(){
     let data= radioButtons.forEach( function(valor, indice, array) {
@@ -116,8 +129,19 @@ function searchData(){
 }
 
 function selectUsuario(rut){
+    diasExtra=0
+    var row=document.getElementById(rut);
     idUsuario.value=rut;
-    console.log(idUsuario.value)
+    var perfilesSeleccionado=row.cells[7].children[0].value.split(",")
+    perfilesSeleccionado.forEach(function(element,indice, array){
+            for (let i = 0; i < perfilesId.length; i++) {
+                    if(element==perfilesId[i]){
+                        diasExtra=diasExtra+perfilesDias[i]
+                    }
+            }
+        }
+    )
+    console.log(diasExtra)
 }
 function selectLibro(idRow){
     
@@ -128,7 +152,7 @@ function selectLibro(idRow){
     titulo.value=row.cells[1].children[1].value;
     fechaSolicitud.value=new Date().toISOString()
     let dates= new Date()
-    dates.setDate(dates.getDate() + 7);
+    dates.setDate(dates.getDate() + diasExtra+7);
     fechaEntregaMaxima.value=dates.toISOString()
     var estadoAntesEntrega=document.getElementById("estadoLibro");
 }
