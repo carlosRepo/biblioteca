@@ -26,6 +26,9 @@ export const renderEditLibro = async(req, res) => {
 export const editLibro = async(req, res) => {
     const { id } = req.params
     req.body.clasificacionLibro = req.body.clasificacionLibro.split(",")
+
+    await SolicitudUsuario.updateMany({ "datosEntregaLibro.idLibro": id }, { "datosEntregaLibro.$.titulo": req.body.tituloLibro })
+
     await Libro.findByIdAndUpdate(id, req.body)
     res.redirect('/');
 }
