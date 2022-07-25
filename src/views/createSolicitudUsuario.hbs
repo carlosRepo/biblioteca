@@ -1,6 +1,9 @@
+
 <h1>seleccione al usuario y los libros</h1>
 
+
     <table class="table table-bordered table-light">
+
     <thead>
         <tr>
             <th>rutUsuario</th>
@@ -46,7 +49,9 @@
     </tbody>
 
 </table>
+
     <table class="table table-bordered table-light">
+
     <thead>
         <tr>
             <th>cantidad</th>
@@ -81,11 +86,13 @@
 </table>
 
 
+
 <div class="card" style="width: 26rem;">
 <div class="card-body">
 <form id="enviar" action="/solicitudUsuario/add" method="POST">
 Estado del libro actual:
 <input class="form-control" type="text" id="estadoAntesEntrega" name="estadoAntesEntrega" style="margin-bottom: 10px; margin-top: 10px;">
+
 <input type="hidden" id="idUsuario" name="idUsuario" value="">
 <input type="hidden" id="idLibro" name="idLibro"value="">
 <input type="hidden" id="titulo" name="titulo"value="">
@@ -95,11 +102,13 @@ Estado del libro actual:
 <input type="hidden" id="cantidadLibro" name="cantidadLibro"value="">
 <input type="hidden" id="estadoDespuesEntrega" name="estadoDespuesEntrega"value="">
 
+
 <input type="button"class="btn btn-warning " onclick="searchData()" value="Agregar">
 </form>
 
 </div>
 </div>
+
 <script>
     //DOM
     var idUsuario=document.getElementById("idUsuario");

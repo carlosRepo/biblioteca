@@ -1,54 +1,63 @@
-    <table class="table table-light table-bordered">
-    <thead>
-        <tr>
-            <th>título</th>
-            <th>editorial</th>
-            <th>autor</th>
-            <th>estadoLibro</th>
-            <th>clasificacion</th>
-            <th>cantidadTotal</th>
-            <th>cantidadDisponible</th>
-            <th>controles</th>
-            <th>reseñas</th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th><th></th>
-            <th></th><th></th>
-            <th>usuario</th><th>descripcion</th><th>puntaje</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each libros}}
-        <tr>
-            <td>{{tituloLibro}}</td>
-            <td>{{editorialLibro}}</td>
-            <td>{{autorLibro}}</td>
-            <td>{{estadoLibro}}</td>
-            <td>{{clasificacionLibro}}</td>
-            <td>{{cantidadTotalLibro}}</td>
-            <td>{{cantidadDisponibleLibro}}</td>
-                        <td>
-                <a href="/editLibro/{{_id}}">editar</a>
-                <a href="/deleteLibro/{{_id}}">eliminar</a>
-            </td>    
-            {{#each resenaLibro}}
-                <td>{{nombreUsuario}}</td>
-                <td>{{resenaPorUsuario}}</td>
-                <td>{{puntuacion}}</td>
-            {{/each}}
 
-        </tr>
-        {{/each}}
-    </tbody>
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-6 col-md-offset-6">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>título</th>
+                        <th>editorial</th>
+                        <th>autor</th>
+                        <th>estadoLibro</th>
+                        <th>clasificacion</th>
+                        <th>cantidadTotal</th>
+                        <th>cantidadDisponible</th>
+                        <th>controles</th>
+                        <th colspan="3">reseñas</th>
+                    </tr>
+                            <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th><th></th>
+                        <th></th><th></th>
+                        <th>usuario</th><th>descripcion</th><th>puntaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each libros}}
+                    <tr>
+                        <td>{{tituloLibro}}</td>
+                        <td>{{editorialLibro}}</td>
+                        <td>{{autorLibro}}</td>
+                        <td>{{estadoLibro}}</td>
+                        <td>{{clasificacionLibro}}</td>
+                        <td>{{cantidadTotalLibro}}</td>
+                        <td>{{cantidadDisponibleLibro}}</td>
+                                    <td>
+                            <a href="/editLibro/{{_id}}">editar</a>
+                            <a href="/deleteLibro/{{_id}}">eliminar</a>
+                        </td>
+                        {{#if resenaLibro}}    
+                        {{#each resenaLibro}}
+                            <td>{{nombreUsuario}}</td>
+                            <td>{{resenaPorUsuario}}</td>
+                            <td>{{puntuacion}}</td>
+                        {{/each}}
+                        {{else}}
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        {{/if}}
 
-</table>
+                    </tr>
+                    {{/each}}
+                </tbody>
 
-
-
-
+            </table>
+        </div>
+    </div>
+</div>
+</div>

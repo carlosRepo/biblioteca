@@ -1,40 +1,51 @@
-<h1>edit</h1>
-<div class="card" style="width: 26rem; margin:0 auto; margin-top: 20px;">
-<div class="card-body">
+
+<div class="container">
+    <div class="row" >
+        <div class="row-mb-12" >
+            <div class="col-md-6 col-md-offset-6" style=" margin:0px auto">
+<h1>Editar Libro</h1>
+
 <form action="/editLibro/{{_id}}" method="POST">
 
-    <div class="form-group mb-3">
-        <label for="">Ingrese un titulo</label>
-        <input class="form-control" type="text" placeholder="titulo" name="tituloLibro" value="{{tituloLibro}}" required>
+    <div>
+        <label class="fw-bold" for="">Ingrese un titulo</label>
+        <input class="form form-control" type="text" placeholder="titulo" name="tituloLibro" value="{{tituloLibro}}" required>
     </div>
-    <div class="form-group mb-3">
-        <label for="">Ingrese una o unas editoriales separadas por una coma</label>
-        <input class="form-control" type="text" placeholder="editoriales" name="editorialLibro" value="{{editorialLibro}}" required>
+    <div>
+        <label class="fw-bold" for="">Ingrese una o unas editoriales separadas por una coma</label>
+        <input class="form form-control" type="text" placeholder="editoriales" name="editorialLibro" value="{{editorialLibro}}" required>
     </div>
-    <div class="form-group mb-3">
-        <label for="">Ingrese una o unas editoriales separadas por una coma</label>
-        <input class="form-control" type="text" placeholder="editoriales" name="autorLibro" value="{{autorLibro}}" required>
+        <div>
+        <label class="fw-bold" for="">Ingrese una o unas editoriales separadas por una coma</label>
+        <input class="form form-control" type="text" placeholder="editoriales" name="autorLibro" value="{{autorLibro}}" required>
     </div>
-    <div class="form-group mb-3">
-        <label for="">Ingrese un estadoLibro</label>
-        <input class="form-control" type="text" placeholder="estadoLibro" name="estadoLibro" value="{{estadoLibro}}" required>
+    <div>
+        <label class="fw-bold" for="">Ingrese un estadoLibro</label>
+        <input class="form form-control" type="text" placeholder="estadoLibro" name="estadoLibro" value="{{estadoLibro}}" required>
     </div>
-    <div class="form-group mb-3">
-        <label for="">Ingrese un clasificacion</label>
-        <input class="form-control" type="text" placeholder="clasificacion" name="clasificacionLibro" value="{{clasificacionLibro}}" required>
+    <div>
+        <label class="fw-bold" for="">Ingrese un clasificacion</label>
+        <input class="form form-control" type="text" placeholder="clasificacion" name="clasificacionLibro" value="{{clasificacionLibro}}" required>
     </div>
-    <div class="form-group mb-3">
-        <label for="">Ingrese un cantidadTotal</label>
-        <input class="form-control" type="text" placeholder="cantidadTotal" name="cantidadTotalLibro" value="{{cantidadTotalLibro}}" required>
+    <div>
+        <label class="fw-bold" for="">Ingrese un cantidadTotal</label>
+        <input class="form form-control" type="text" placeholder="cantidadTotal" name="cantidadTotalLibro" value="{{cantidadTotalLibro}}" required>
     </div>
-    <div class="form-group mb-3">
-        <label for="">Ingrese un cantidadDisponible</label>
-        <input class="form-control" type="text" placeholder="cantidadDisponible" name="cantidadDisponibleLibro" value="{{cantidadDisponibleLibro}}" required>
+    <div>
+        <label class="fw-bold" for="">Ingrese un cantidadDisponible</label>
+        <input class="form form-control" type="text" placeholder="cantidadDisponible" name="cantidadDisponibleLibro" value="{{cantidadDisponibleLibro}}" required> 
     </div>
 
 
-<button class="btn btn-primary">editar</button>
+    <div class="col-md-4 col-md-offset-4 text-center" style=" margin:0px auto">
+        <div class="row">
+            <button class="btn btn-primary">Editar</button>
+        </div>
+        
+    </div>
 </form>
+        </div>
+    </div>
 
 </div>
 </div>

@@ -1,12 +1,29 @@
-<h1>create</h1>
+
+<div class="container">
+    <div class="row" >
+        <div class="row-mb-12" >
+            <div class="col-md-6 col-md-offset-6" style=" margin:0px auto">
+<h1>Crear Perfil</h1>
+<form action="/perfil/add" method="POST">
+
 
 <div class="card" style="width: 26rem;">
     <div class="card-body">
         <form action="/perfil/add" method="POST">
 
-            {{>perfiles/perfilesFormDiv}}
 
-            <button class="btn btn-success">agregar</button>
-        </form>
+<div class="col-md-4 col-md-offset-4 text-center" style=" margin:0px auto">
+ {{>perfiles/perfilesFormDiv}}
+
+                            <div class="row">
+                                <button class="btn btn-primary">Agregar</button>
+                            </div>
+                            
+                        </div>
+</form>
+            </div>
+        </div>
+
+
     </div>
 </div>

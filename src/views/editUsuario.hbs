@@ -1,10 +1,13 @@
-<h1>edit</h1>
+<div class="container">
+    <div class="row" >
+        <div class="row-mb-12" >
+            <div class="col-md-6 col-md-offset-6" style=" margin:0px auto">
+<h1>Editar Usuario</h1>
 
 <div class="card" style="width: 26rem; margin:0 auto; margin-top: 20px;">
 <div class="card-body">
 
 <form action="/editUsuario/{{_id}}" method="POST">
-
      <div class="form-group mb-3">
         <label for="">Ingrese rutUsuario</label>
         <input class="form-control" type="text" placeholder="rutUsuario" name="rutUsuario" value="{{rutUsuario}}" required>
@@ -42,10 +45,9 @@
         <input class="form-control" type="text" placeholder="idPerfil" name="idPerfil" value="{{idPerfil}}" required>
     </div>
 
-
-
 <button class="btn btn-primary">editar</button>
 </form>
 
 </div>
+
 </div>
