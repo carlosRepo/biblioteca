@@ -27,7 +27,7 @@
             <td>{{cantidadMaximaAPedirUsuario}}</td>
             <td>{{idPerfil}}</td>
             {{#if estadoCuentaUsuario}}
-            <td><input type="radio" name="usuarioSelected" value="{{rutUsuario}}" onclick="selectUsuario('{{_id}}')"></td>
+            <td><input type="radio" name="usuarioSelected" value="{{rutUsuario}}" required="required"  onclick="selectUsuario('{{_id}}')"></td>
             {{/if}}
         </tr>
         {{/each}}
@@ -60,7 +60,8 @@
             <td>{{clasificacionLibro}}</td>
             <td>{{cantidadTotalLibro}}</td>
             <td>{{cantidadDisponibleLibro}}</td>
-            <td><input type="radio" name="libroSelected" value="{{_id}}" onclick="selectLibro('{{_id}}')"></td>
+            
+            <td><input type="radio" name="libroSelected" value="{{_id}}" required="required"  onclick="selectLibro('{{_id}}')"></td>
         </tr>
         {{/each}}
     </tbody>
@@ -70,7 +71,7 @@
 
 <div class="card" style="width: 26rem;">
 <div class="card-body">
-<form action="/solicitudUsuario/add" method="POST">
+<form id="enviar" action="/solicitudUsuario/add" method="POST">
 Estado del libro actual:
 <input class="form-control" type="text" id="estadoAntesEntrega" name="estadoAntesEntrega" style="margin-bottom: 10px; margin-top: 10px;">
 <input type="hidden" id="idUsuario" name="idUsuario" value="">
@@ -82,7 +83,7 @@ Estado del libro actual:
 <input type="hidden" id="cantidadLibro" name="cantidadLibro"value="">
 <input type="hidden" id="estadoDespuesEntrega" name="estadoDespuesEntrega"value="">
 
-<button class="btn btn-warning " onclick="searchData()">agregar</button>
+<input type="button"class="btn btn-warning " onclick="searchData()" value="Agregar">
 </form>
 
 </div>
@@ -98,6 +99,7 @@ Estado del libro actual:
     var cantidadLibro=document.getElementById("cantidadLibro");
     var estadoDespuesEntrega=document.getElementById("estadoDespuesEntrega");
     var radioButtons=document.getElementsByName("libroSelected");
+    var estadoAntesEntrega=document.getElementById("estadoAntesEntrega")
 
 function searchData(){
     let data= radioButtons.forEach( function(valor, indice, array) {
@@ -106,8 +108,12 @@ function searchData(){
         selectLibro(valor.value)
     }
 });
+    if(idUsuario.value==""||idLibro.value==""||estadoAntesEntrega.value==""){
+        alert("Faltan datos por seleccionar/ingresar")
+    }else{
+    document.getElementById("enviar").submit()
+    }
 }
-
 
 function selectUsuario(rut){
     idUsuario.value=rut;
