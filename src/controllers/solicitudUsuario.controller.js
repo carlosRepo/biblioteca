@@ -49,15 +49,18 @@ export const entregarLibroBuenEstado = async(req, res) => {
     var filter = { "datosEntregaLibro.fechaSolicitud": req.params.id }
     var update = { "datosEntregaLibro.$.fechaEntrega": new Date().toISOString() }
     var update2 = { "datosEntregaLibro.$.estadoDespuesEntrega": "Bueno" }
-
+    const solicitudUsuario = await SolicitudUsuario.findOne(filter).lean()
     await SolicitudUsuario.findOneAndUpdate(filter, update)
     await SolicitudUsuario.findOneAndUpdate(filter, update2)
 
-    const solicitudUsuario = await SolicitudUsuario.findOne(filter).lean()
-    const libro = await Libro.findById({ _id: solicitudUsuario.datosEntregaLibro[0].idLibro }).lean()
-    libro.cantidadDisponibleLibro = libro.cantidadDisponibleLibro + solicitudUsuario.datosEntregaLibro[0].cantidadLibro;
-    await Libro.findByIdAndUpdate(libro._id, libro)
 
+    const libro = await Libro.findById({ _id: solicitudUsuario.datosEntregaLibro[0].idLibro }).lean()
+    if (!(solicitudUsuario.datosEntregaLibro[0].estadoDespuesEntrega == "Mal" ||
+            solicitudUsuario.datosEntregaLibro[0].estadoDespuesEntrega == "Bueno")) {
+        libro.cantidadDisponibleLibro = parseInt(libro.cantidadDisponibleLibro) + parseInt(solicitudUsuario.datosEntregaLibro[0].cantidadLibro);
+        await Libro.findByIdAndUpdate(libro._id, libro)
+    }
+    console.log(solicitudUsuario.datosEntregaLibro[0])
     res.redirect('/');
 }
 
@@ -65,7 +68,17 @@ export const entregarLibroMalEstado = async(req, res) => {
     var filter = { "datosEntregaLibro.fechaSolicitud": req.params.id }
     var update = { "datosEntregaLibro.$.fechaEntrega": new Date().toISOString() }
     var update2 = { "datosEntregaLibro.$.estadoDespuesEntrega": "Mal" }
+    const solicitudUsuario = await SolicitudUsuario.findOne(filter).lean()
     await SolicitudUsuario.findOneAndUpdate(filter, update)
     await SolicitudUsuario.findOneAndUpdate(filter, update2)
+
+    const libro = await Libro.findById({ _id: solicitudUsuario.datosEntregaLibro[0].idLibro }).lean()
+    if (!(solicitudUsuario.datosEntregaLibro[0].estadoDespuesEntrega == "Mal" ||
+            solicitudUsuario.datosEntregaLibro[0].estadoDespuesEntrega == "Bueno")) {
+        libro.cantidadDisponibleLibro = parseInt(libro.cantidadDisponibleLibro) + parseInt(solicitudUsuario.datosEntregaLibro[0].cantidadLibro);
+        await Libro.findByIdAndUpdate(libro._id, libro)
+    }
+
+
     res.redirect('/');
 }
