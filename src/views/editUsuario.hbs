@@ -1,45 +1,57 @@
-<h1>edit</h1>
+<div class="container">
+    <div class="row" >
+        <div class="row-mb-12" >
+            <div class="col-md-6 col-md-offset-6" style=" margin:0px auto">
+<h1>Editar Usuario</h1>
 
 <form action="/editUsuario/{{_id}}" method="POST">
 
      <div>
-        <label for="">Ingrese rutUsuario</label>
-        <input type="text" placeholder="rutUsuario" name="rutUsuario" value="{{rutUsuario}}">
+        <label class="fw-bold" for="">Ingrese Rut</label>
+        <input class="form form-control" type="text" placeholder="rutUsuario" name="rutUsuario" value="{{rutUsuario}}">
     </div>
     <div>
-        <label for="">Ingrese nombreCompletoUsuario</label>
-        <input type="text" placeholder="nombreCompletoUsuario" name="nombreCompletoUsuario" value="{{nombreCompletoUsuario}}">
+        <label class="fw-bold" for="">Ingrese Nombre completo</label>
+        <input class="form form-control" type="text" placeholder="nombreCompletoUsuario" name="nombreCompletoUsuario" value="{{nombreCompletoUsuario}}">
     </div>
         <div>
-        <label for="">Ingrese fechaNacimientoUsuario</label>
-        <input type="date" placeholder="fechaNacimientoUsuario" name="fechaNacimientoUsuario" value="{{fechaNacimientoUsuario}}">
+        <label class="fw-bold" for="">Ingrese Fecha de Nacimiento</label>
+        <input class="form form-control" type="date" placeholder="fechaNacimientoUsuario" name="fechaNacimientoUsuario" value="{{fechaNacimientoUsuario}}">
     </div>
     <div>
-        <label for="">Ingrese un direccionUsuario</label>
-        <input type="text" placeholder="direccionUsuario" name="direccionUsuario" value="{{direccionUsuario}}">
+        <label class="fw-bold" for="">Ingrese un Dirección</label>
+        <input class="form form-control" type="text" placeholder="direccionUsuario" name="direccionUsuario" value="{{direccionUsuario}}">
     </div>
     <div>
-        <label for="">Ingrese un correoUsuario</label>
-        <input type="text" placeholder="correoUsuario" name="correoUsuario" value="{{correoUsuario}}">
+        <label class="fw-bold" for="">Ingrese un Correo</label>
+        <input class="form form-control" type="text" placeholder="correoUsuario" name="correoUsuario" value="{{correoUsuario}}">
     </div>
     <div>
-        <label for="">Ingrese un contraseñaUsuario</label>
-        <input type="text" placeholder="contraseñaUsuario" name="contraseñaUsuario" value="{{contraseñaUsuario}}">
+        <label class="fw-bold" for="">Ingrese un Password</label>
+        <input class="form form-control" type="text" placeholder="contraseñaUsuario" name="contraseñaUsuario" value="{{contraseñaUsuario}}">
     </div>
     <div>
-        <label for="">Ingrese un estadoCuentaUsuario</label>
-        <input type="text" placeholder="estadoCuentaUsuario" name="estadoCuentaUsuario" value="{{estadoCuentaUsuario}}">
+        <label class="fw-bold" for="">Ingrese un Estado de cuenta</label>
+        <input class="form form-control" type="text" placeholder="estadoCuentaUsuario" name="estadoCuentaUsuario" value="{{estadoCuentaUsuario}}">
     </div>
     <div>
-        <label for="">Ingrese un cantidadMaximaAPedirUsuario</label>
-        <input type="text" placeholder="cantidadMaximaAPedirUsuario" name="cantidadMaximaAPedirUsuario" value="{{cantidadMaximaAPedirUsuario}}">
+        <label class="fw-bold" for="">Ingrese una cantidad máxima permitida</label>
+        <input class="form form-control" type="text" placeholder="cantidadMaximaAPedirUsuario" name="cantidadMaximaAPedirUsuario" value="{{cantidadMaximaAPedirUsuario}}">
     </div>
     <div>
-        <label for="">Ingrese un idPerfil</label>
-        <input type="text" placeholder="idPerfil" name="idPerfil" value="{{idPerfil}}">
+        <label class="fw-bold" for="">Ingrese un ID de perfil</label>
+        <input class="form form-control" type="text" placeholder="idPerfil" name="idPerfil" value="{{idPerfil}}">
     </div>
 
 
-
-<button>editar</button>
+    <div class="col-md-4 col-md-offset-4 text-center" style=" margin:0px auto">
+        <div class="row">
+            <button class="btn btn-primary">Editar</button>
+        </div>
+        
+    </div>
 </form>
+            </div>
+        </div>
+    </div>
+</div>
