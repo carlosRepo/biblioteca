@@ -1,38 +1,46 @@
-    <table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>idUsuario</th>
-            <th>idLibro</th>
-            <th>titulo</th>
-            <th>fechaSolicitud</th>
-            <th>fechaEntrega</th>
-            <th>fechaEntregaMaxima</th>
-            <th>cantidadLibro</th>
-            <th>estadoAntesEntrega</th>
-            <th>estadoDespuesEntrega</th>
-            <th>controles</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each solicitudUsuarios}}
-        <tr>
-            <td>{{idUsuario}}</td>
-            {{#each datosEntregaLibro}}
-            <td>{{idLibro}}</td>
-            <td>{{titulo}}</td>
-            <td>{{fechaSolicitud}}</td>
-            <td>{{fechaEntrega}}</td>
-            <td>{{fechaEntregaMaxima}}</td>
-            <td>{{cantidadLibro}}</td>
-            <td>{{estadoAntesEntrega}}</td>
-            <td>{{estadoDespuesEntrega}}</td>
-            <td>
-                <a href="/entregarLibro/{{fechaSolicitud}}">entregar libro buen estado</a>
-                <a href="/entregarLibroMal/{{fechaSolicitud}}">entregar libro mal estado</a>
-            </td>    
-            {{/each}}
-        </tr>
-        {{/each}}
-    </tbody>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6 col-md-offset-6">    
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th>idUsuario</th>
+                            <th>idLibro</th>
+                            <th>titulo</th>
+                            <th>fechaSolicitud</th>
+                            <th>fechaEntrega</th>
+                            <th>fechaEntregaMaxima</th>
+                            <th>cantidadLibro</th>
+                            <th>estadoAntesEntrega</th>
+                            <th>estadoDespuesEntrega</th>
+                            <th>controles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{#each solicitudUsuarios}}
+                        <tr>
+                            <td>{{idUsuario}}</td>
+                            {{#each datosEntregaLibro}}
+                            <td>{{idLibro}}</td>
+                            <td>{{titulo}}</td>
+                            <td>{{fechaSolicitud}}</td>
+                            <td>{{fechaEntrega}}</td>
+                            <td>{{fechaEntregaMaxima}}</td>
+                            <td>{{cantidadLibro}}</td>
+                            <td>{{estadoAntesEntrega}}</td>
+                            <td>{{estadoDespuesEntrega}}</td>
+                            <td>
+                            <a href="/entregarLibro/{{fechaSolicitud}}">entregar libro buen estado</a>
+                            <a href="/entregarLibroMal/{{fechaSolicitud}}">entregar libro mal estado</a>
+                            </td>    
+                        {{/each}}
+                        </tr>
+                    {{/each}}
+                    </tbody>
 
-</table>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

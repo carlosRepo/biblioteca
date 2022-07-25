@@ -1,12 +1,30 @@
-<h1>login usuario</h1>
-<form action="/loginUsuario/" method="POST">
-    <div>
-        <label for="">Ingrese correo</label>
-        <input type="text" placeholder="correoUsuario" name="correoUsuario" value="">
+<div class="container">
+    <div class="row" >
+        <div class="row-mb-12" >
+            <div class="col-md-6 col-md-offset-6" style=" margin:0px auto">
+
+                <h1>login usuario</h1>
+                <form action="/loginUsuario/" method="POST">
+                    <div class="form-group row">
+                        <label class="fw-bold" for="">Ingrese correo</label>
+                        <br/>
+                        <input class="form-control" type="text" placeholder="correoUsuario" name="correoUsuario" value="">
+                    </div>
+                    <div class="form-group row"> 
+                        <label class="fw-bold" for="">Ingrese un contraseña</label>
+                        <input class="form form-control" type="text" placeholder="contraseñaUsuario" name="contraseñaUsuario" value="">
+                    </div>
+                    
+                        <div class="col-md-4 col-md-offset-4 text-center" style=" margin:0px auto">
+                            <div class="row">
+                                <button class="btn btn-primary">ingresar</button>
+                            </div>
+                            
+                        </div>
+                        
+                    
+                </form>
+            </div>
+        </div>
     </div>
-    <div>
-        <label for="">Ingrese un contraseña</label>
-        <input type="text" placeholder="contraseñaUsuario" name="contraseñaUsuario" value="">
-    </div>
-    <button>ingresar</button>
-</form>
+</div>
