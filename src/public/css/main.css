@@ -1,0 +1,16 @@
+input{
+    max-width: 500px;
+}
+
+thead, label::first-letter, button, :placeholder-shown, a{
+    text-transform: capitalize;
+}
+
+.card{
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+header{
+    margin-bottom: 10px;
+}

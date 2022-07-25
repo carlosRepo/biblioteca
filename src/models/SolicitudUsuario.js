@@ -10,7 +10,7 @@ const solicitudUsuarioSchema = new Schema({
         fechaSolicitud: String,
         fechaEntrega: String,
         fechaEntregaMaxima: String,
-        cantidadLibro: String,
+        cantidadLibro: Number,
         estadoAntesEntrega: String,
         estadoDespuesEntrega: String
     }]

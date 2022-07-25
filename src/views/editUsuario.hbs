@@ -4,54 +4,50 @@
             <div class="col-md-6 col-md-offset-6" style=" margin:0px auto">
 <h1>Editar Usuario</h1>
 
+<div class="card" style="width: 26rem; margin:0 auto; margin-top: 20px;">
+<div class="card-body">
+
 <form action="/editUsuario/{{_id}}" method="POST">
+     <div class="form-group mb-3">
+        <label for="">Ingrese rutUsuario</label>
+        <input class="form-control" type="text" placeholder="rutUsuario" name="rutUsuario" value="{{rutUsuario}}" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="">Ingrese nombreCompletoUsuario</label>
+        <input class="form-control" type="text" placeholder="nombreCompletoUsuario" name="nombreCompletoUsuario" value="{{nombreCompletoUsuario}}" required>
+    </div>
+        <div class="form-group mb-3">
+        <label for="">Ingrese fechaNacimientoUsuario</label>
+        <input class="form-control" type="date" placeholder="fechaNacimientoUsuario" name="fechaNacimientoUsuario" value="{{fechaNacimientoUsuario}}" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="">Ingrese un direccionUsuario</label>
+        <input class="form-control" type="text" placeholder="direccionUsuario" name="direccionUsuario" value="{{direccionUsuario}}" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="">Ingrese un correoUsuario</label>
+        <input class="form-control" type="text" placeholder="correoUsuario" name="correoUsuario" value="{{correoUsuario}}" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="">Ingrese un contraseñaUsuario</label>
+        <input class="form-control" type="text" placeholder="contraseñaUsuario" name="contraseñaUsuario" value="{{contraseñaUsuario}}" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="">Ingrese un estadoCuentaUsuario</label>
+        <input class="form-control" type="text" placeholder="estadoCuentaUsuario" name="estadoCuentaUsuario" value="{{estadoCuentaUsuario}}" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="">Ingrese un cantidadMaximaAPedirUsuario</label>
+        <input class="form-control" type="text" placeholder="cantidadMaximaAPedirUsuario" name="cantidadMaximaAPedirUsuario" value="{{cantidadMaximaAPedirUsuario}}" required>
+    </div>
+    <div class="form-group mb-3">
+        <label for="">Ingrese un idPerfil</label>
+        <input class="form-control" type="text" placeholder="idPerfil" name="idPerfil" value="{{idPerfil}}" required>
+    </div>
 
-     <div>
-        <label class="fw-bold" for="">Ingrese Rut</label>
-        <input class="form form-control" type="text" placeholder="rutUsuario" name="rutUsuario" value="{{rutUsuario}}">
-    </div>
-    <div>
-        <label class="fw-bold" for="">Ingrese Nombre completo</label>
-        <input class="form form-control" type="text" placeholder="nombreCompletoUsuario" name="nombreCompletoUsuario" value="{{nombreCompletoUsuario}}">
-    </div>
-        <div>
-        <label class="fw-bold" for="">Ingrese Fecha de Nacimiento</label>
-        <input class="form form-control" type="date" placeholder="fechaNacimientoUsuario" name="fechaNacimientoUsuario" value="{{fechaNacimientoUsuario}}">
-    </div>
-    <div>
-        <label class="fw-bold" for="">Ingrese un Dirección</label>
-        <input class="form form-control" type="text" placeholder="direccionUsuario" name="direccionUsuario" value="{{direccionUsuario}}">
-    </div>
-    <div>
-        <label class="fw-bold" for="">Ingrese un Correo</label>
-        <input class="form form-control" type="text" placeholder="correoUsuario" name="correoUsuario" value="{{correoUsuario}}">
-    </div>
-    <div>
-        <label class="fw-bold" for="">Ingrese un Password</label>
-        <input class="form form-control" type="text" placeholder="contraseñaUsuario" name="contraseñaUsuario" value="{{contraseñaUsuario}}">
-    </div>
-    <div>
-        <label class="fw-bold" for="">Ingrese un Estado de cuenta</label>
-        <input class="form form-control" type="text" placeholder="estadoCuentaUsuario" name="estadoCuentaUsuario" value="{{estadoCuentaUsuario}}">
-    </div>
-    <div>
-        <label class="fw-bold" for="">Ingrese una cantidad máxima permitida</label>
-        <input class="form form-control" type="text" placeholder="cantidadMaximaAPedirUsuario" name="cantidadMaximaAPedirUsuario" value="{{cantidadMaximaAPedirUsuario}}">
-    </div>
-    <div>
-        <label class="fw-bold" for="">Ingrese un ID de perfil</label>
-        <input class="form form-control" type="text" placeholder="idPerfil" name="idPerfil" value="{{idPerfil}}">
-    </div>
-
-
-    <div class="col-md-4 col-md-offset-4 text-center" style=" margin:0px auto">
-        <div class="row">
-            <button class="btn btn-primary">Editar</button>
-        </div>
-        
-    </div>
+<button class="btn btn-primary">editar</button>
 </form>
-            </div>
-        </div>
-    </div>
+
+</div>
+
 </div>
