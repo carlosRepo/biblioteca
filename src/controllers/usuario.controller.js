@@ -38,6 +38,9 @@ export const editUsuario = async(req, res) => {
     const { id } = req.params
     req.body.idPerfil = req.body.idPerfil.split(",")
     await Usuario.findByIdAndUpdate(id, req.body)
+
+    await Libro.updateMany({ "resenaLibro.idUsuario": id }, { $set: { "resenaLibro.$.nombreUsuario": req.body.nombreCompletoUsuario } });
+
     res.redirect('/');
 }
 

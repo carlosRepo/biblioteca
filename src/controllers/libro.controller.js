@@ -25,7 +25,7 @@ export const renderEditLibro = async(req, res) => {
 
 export const editLibro = async(req, res) => {
     const { id } = req.params
-    req.params.clasificacionLibro = req.params.clasificacionLibro.split(",")
+    req.body.clasificacionLibro = req.body.clasificacionLibro.split(",")
     await Libro.findByIdAndUpdate(id, req.body)
     res.redirect('/');
 }
